@@ -1,0 +1,227 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  .header{
+    min-height:2vh;
+    width: 70px;
+    /*background-image: url('../mywebsite/organicgreen.jpg') ;*/
+    
+  
+
+    background-position: center;
+    background-size: cover;
+    position: relative ;
+    
+
+}
+.body{
+    background-image: "organicgreen.jpg";
+    align-content: center;
+    
+}
+nav{
+    display: flex;
+    padding: 1% 2%;
+    justify-content: space-between;
+    align-items: center;
+    background-color:white;
+
+}
+nav img{
+    width:80px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding:6px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: black;
+    text-decoration:none;
+    font-size: 20px;
+    text-align:right;
+}
+.nav-links ul li::after{
+    content:'';
+    width:0%;
+    height: 2px;
+    background: rgb(32,128,67);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+    
+}
+.nav-links ul li:hover::after{
+   width: 100%;
+
+}
+.text-box{
+    width:90%;
+    color:blue;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: right;
+}
+
+
+    
+    
+
+body {font-family: Arial, Helvetica, sans-serif;
+     
+     background-color: rgb(94, 215, 94);
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: 100% 100%;
+   }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+  align-content: center;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: black;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+  <section clas="header">
+    <nav>
+        <a href="index.html"><img src="organicgreen.jpg"></a>
+        
+        
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="products.html">PRODUCTS</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="contacts.html">CONTACT</a></li>
+
+            </ul>
+
+
+        </div>
+    </nav>
+  
+<!-- The four columns -->
+<div class="row">
+  
+    <div class="column">
+    <img src="11.jpg" alt="Ubtan Face Wash <br> Rs: 249/-" height="240px" width="360px" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="22.jpg" alt="Coco Hand Creame <br> Rs: 313/-" height="240px" width="360px" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="33.jpeg" alt="Almond Shampoo <br> Rs: 349/-" height="240px" width="360px" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="55.jpg" alt="Vitamin C Foaming Face Wash <br> Rs: 359/-" height="240px" width="360px" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="66.jpg" alt="Skin Illuminate Face Serum <br> Rs: 599/-" height="240px" width="360px" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="77.jpeg" alt="Apple Cider Vinegar Shampoo <br> Rs: 349/-" height="240px" width="360px" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="88.jpg" alt="Charcoal Face Wash <br> Rs: 244/-" height="240px" width="360px" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="99.jpg" alt="Ubtan Face Mask <br> Rs: 399/-" height="240px" width="360px" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="1010.jpg" alt="Tea Tree Face Mask<br> Rs: 499/-" height="240px" width="360px" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="1111.jpg" alt="Vitamin C Bamboo Sheet Mask <br> Rs: 357/-" height="240px" width="360px" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="1212.jpg" alt="Cherry Tinted 100% Natural Lip Balm<br> Rs: 299/-" height="240px" width="360px" onclick="myFunction(this);">
+  </div>
+    <div class="column">
+      <img src="1515.jpg" alt="Onion Conditioner<br> Rs: 474/-" height="240px" width="360px" onclick="myFunction(this);"> 
+  </div>
+
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" height="600px" width="500px">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
